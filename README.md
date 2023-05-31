@@ -1,4 +1,4 @@
- # schedules-api
+ # laravel-invoice-api
  Invoice api - Laravel application
  
 # Requisitos
