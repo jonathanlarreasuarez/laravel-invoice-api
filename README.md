@@ -27,6 +27,13 @@ Clonar el repositorio:
 # Acceder a la aplicación en tu navegador web:
 - http://localhost:8000
 
+# Rutas 
+- Get: http://localhost:8000/api/v1/invoices
+- Get: http://localhost:8000/api/v1/invoices/{invoice}
+- Post: http://localhost:8000/api/v1/invoices
+- Patch: http://localhost:8000/api/v1/invoices/{invoice}
+- Delete: http://localhost:8000/api/v1/invoices/{invoice}
+
 # Payload Ejemplo :
 - Crear nueva factura
 {
