@@ -1,0 +1,193 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Invoice Application API",
+        "description": "Documentation Invoice Application.",
+        "contact": {
+            "email": "jonathanlarreasuarez@gmail.com"
+        },
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/v1/invoices": {
+            "get": {
+                "tags": [
+                    "Invoice"
+                ],
+                "summary": "Get all invoices",
+                "description": "Get all invoices in format JSON",
+                "operationId": "getAllInvoices",
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "404": {
+                        "description": "Not found"
+                    },
+                    "500": {
+                        "description": "Error interno del servidor"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Invoice"
+                ],
+                "summary": "Create new invoice.",
+                "description": "Create new invoice.",
+                "operationId": "addInvoice",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "properties": {
+                                    "id_transaction": {
+                                        "description": "id transaction",
+                                        "type": "string"
+                                    },
+                                    "inv_business_name": {
+                                        "description": "business name",
+                                        "type": "string"
+                                    },
+                                    "inv_business_address": {
+                                        "description": "business address",
+                                        "type": "string"
+                                    },
+                                    "inv_ruc": {
+                                        "description": "ruc",
+                                        "type": "string"
+                                    },
+                                    "inv_issue_date": {
+                                        "description": "issue date",
+                                        "type": "string",
+                                        "format": "date"
+                                    },
+                                    "inv_accounting_required": {
+                                        "description": "accounting required",
+                                        "type": "string"
+                                    },
+                                    "inv_number_document": {
+                                        "description": "number document",
+                                        "type": "string"
+                                    },
+                                    "inv_establishment": {
+                                        "description": "number establishment",
+                                        "type": "string"
+                                    },
+                                    "inv_emission_point": {
+                                        "description": "number emission point",
+                                        "type": "string"
+                                    },
+                                    "inv_sequential": {
+                                        "description": "number sequential",
+                                        "type": "string"
+                                    },
+                                    "inv_buyer_number_identification": {
+                                        "description": "buyer number identification",
+                                        "type": "string"
+                                    },
+                                    "inv_buyer_address": {
+                                        "description": "buyer address",
+                                        "type": "string"
+                                    },
+                                    "inv_buyer_phone": {
+                                        "description": "buyer_phone",
+                                        "type": "string"
+                                    },
+                                    "inv_buyer_email": {
+                                        "description": "buyer email",
+                                        "type": "string"
+                                    },
+                                    "inv_total_without_tax": {
+                                        "description": "total without tax",
+                                        "type": "string"
+                                    },
+                                    "inv_total_discount": {
+                                        "description": "inv total discount",
+                                        "type": "string"
+                                    },
+                                    "inv_total_tax_iva": {
+                                        "description": "total tax iva",
+                                        "type": "string"
+                                    },
+                                    "inv_total_amount": {
+                                        "description": "total_amount",
+                                        "type": "string"
+                                    },
+                                    "inv_currency": {
+                                        "description": "currency ",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "404": {
+                        "description": "Not found"
+                    },
+                    "500": {
+                        "description": "Error interno del servidor"
+                    }
+                }
+            }
+        },
+        "/api/v1/invoices/{invoice}": {
+            "get": {
+                "tags": [
+                    "Invoice"
+                ],
+                "summary": "Get invoice by Id",
+                "description": "Get invoice by Id in format JSON",
+                "operationId": "getInvoicesById",
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "404": {
+                        "description": "Not found"
+                    },
+                    "500": {
+                        "description": "Error interno del servidor"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Invoice"
+                ],
+                "summary": "Delete invoice",
+                "description": "Delete invoice by Id",
+                "operationId": "deleteInvoicesById",
+                "parameters": [
+                    {
+                        "name": "invoice",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "example": "1"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "404": {
+                        "description": "Not found"
+                    },
+                    "500": {
+                        "description": "Error interno del servidor"
+                    }
+                }
+            }
+        }
+    }
+}
